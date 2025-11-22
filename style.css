@@ -1,0 +1,726 @@
+html{
+    scroll-behavior: smooth;
+    overflow: auto;
+    overflow-x: hidden;
+}
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: none;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: change 10s infinite ease-in-out;
+    
+}
+/* LEFT SIDEBAR: your repeated <ul class="buttons"> elements */
+/* --- Left-side Buttons/Navbar style --- */
+ul.buttons {
+  /* CRITICAL CHANGE: Switches from fixed (stays on screen) to absolute (scrolls with content) */
+  position: absolute; 
+  /* Vertical Centering relative to its container (usually the body/main container) */
+  top: 150%;
+  transform: translateY(-50%);
+  /* Horizontal Positioning: Anchors it 20px from the right edge of its positioned container */
+  right: 20px; 
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px; 
+  list-style: none;
+  padding: 15px 10px;
+  transition: right 0.5s ease, opacity 0.3s ease;
+}
+
+/* list reset (since you used <ol> inside) */
+ul.buttons ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* each button */
+ul.buttons button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* image (logo) style */
+ul.buttons button img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* hover effect */
+ul.buttons button:hover img {
+  transform: scale(1.1);
+  border-color: #ff0000;
+}
+
+/* selected (active) button */
+ul.buttons button.selected img {
+  transform: scale(1.2);
+  border-color: #00baff;
+  box-shadow: 0px 0px 10px #00baff,
+              0px 0px 30px #00baff,
+              0px 0px 60px #00baff,
+              0px 0px 80px #00baff;
+}
+
+/* Responsive: move to top if screen is small */
+@media (max-width: 768px) {
+  ul.buttons {
+    flex-direction: row;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 14px;
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  ul.buttons button img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.Hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 30px;
+  overflow: hidden;
+}
+
+.Hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Scales video to cover the area without distortion */ 
+}
+
+@keyframes change {
+    0% {
+        background-image: url(social/img/akaza.jpg);
+    }
+    20% {
+        background-image: url(social/img/denji.jpg);
+    }
+    40% {
+        background-image: url(social/img/deku.jpg);
+    }
+    60% {
+        background-image: url(social/img/naruto.jpeg);
+    }
+    80% {
+        background-image: url(social/img/sakamoto.jpg);
+    }
+    100% {
+        background-image: url(social/img/akaza.jpg);
+    }
+}
+.content {
+  position: absolute;
+  top: 40%;
+  left: 15%;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  animation: fadeUp 1.5s ease-out;
+}
+.content h1 {
+  font-size: 60px;
+  color: #00b3ff;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(0, 179, 255, 0.7);
+  animation: float 3s ease-in-out infinite alternate;
+}
+
+.content p {
+  font-size: 26px;
+  margin-top: 15px;
+  color: #ccc;
+  opacity: 0;
+  animation: fadeIn 2s 1.2s forwards;
+}
+
+/* Typing cursor */
+#Chep::after {
+  content: "|";
+  margin-left: 5px;
+  animation: blink 0.9s infinite;
+}
+
+/* Fade out cursor after typing finishes */
+#Chep.done::after {
+  animation: none;
+  opacity: 0;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+/* Overlay Container */
+.overlay {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 8px 15px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+/* background image full cover */
+#anime {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* each slide: inner .bg elements */
+#anime > .bg {
+  position: absolute;
+  inset: 0;                  /* top:0; right:0; bottom:0; left:0 */
+  opacity: 1;
+  transition: opacity 0.7s ease, transform 0.6s ease;
+  transform: scale(1.02);
+  pointer-events: none;
+}
+
+/* show the active slide */
+#anime > .bg.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 2;
+  pointer-events: auto;
+}
+
+/* background image full cover inside each slide */
+#anime .image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.45);
+}
+
+/* content block (left) */
+#anime .conteudo {
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  transform: translateY(-50%);
+  z-index: 3;
+  max-width: 420px;
+  color: #fff;
+  line-height: 1.5;
+}
+
+/* title & description */
+#anime .name-movie {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+#anime .description {
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+/* small logo container if you use <i class="logo1"></i> */
+#anime .logo1 {
+  display: block;
+  width: 220px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 18px;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.6));
+}
+
+/* Horizontal layout */
+.overlay-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Nav Buttons */
+.overlay-content a,
+.dropbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 35px;
+  background: linear-gradient(145deg, #9a9999, #d6d6d6);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 3px 8px rgba(166, 153, 153, 0.4);
+}
+
+/* Hover Zoom */
+.overlay-content a:hover,
+.dropbtn:hover {
+  transform: scale(1.15);
+  background: linear-gradient(145deg, #c1baba, #ffffff);
+  color: #000;
+  box-shadow: 0 5px 15px rgba(235, 235, 235, 0.6);
+}
+
+/* Active link */
+.overlay-content a.active {
+  background: linear-gradient(90deg, #00baff, #006eff);
+  box-shadow: 0 0 10px rgba(0, 150, 255, 0.6);
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown content (hidden by default) */
+.drop-content {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  min-width: 140px;
+  background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.25s ease;
+}
+
+/* Dropdown visible state (JS adds .show) */
+.drop-content.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dropdown links */
+.drop-content a {
+  display: block;
+  padding: 8px 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 6px;
+  text-align: left;
+  transition: 0.2s ease-in-out;
+}
+
+.drop-content a:hover {
+  background: linear-gradient(90deg, #00baff, #006eff);
+}
+
+/* Icon */
+.fa-caret-down {
+  margin-left: 4px;
+  font-size: 10px;
+}
+
+.Hero h1 {
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+} 
+
+.section1 {
+  text-align: center;
+  color: #ff5100;
+  padding: 40px 0;
+  position: relative;
+  border-radius: 15px;
+  width: 85%;
+  margin: 50px auto;
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+}
+
+/* Demon Slayer background */
+#demon{
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6);
+  padding: 40px 0;
+  border-radius: 15px;
+}
+
+/* Naruto background */
+#naruto {
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6);
+  padding: 40px 0;
+  border-radius: 15px;
+  margin-top: 50px;
+}
+#mha {
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6);
+  padding: 40px 0;
+  border-radius: 15px;
+  margin-top: 50px;
+}
+#chainsaw {
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6);
+  padding: 40px 0;
+  border-radius: 15px;
+  margin-top: 50px;
+}
+#days {
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6);
+  padding: 40px 0;
+  border-radius: 15px;
+  margin-top: 50px;
+}
+/* Headings */
+.section1 h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  color: #cc3333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.section1 h3 {
+  color: #ffbf00;
+  margin-top: 25px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+/* Slider containers */
+.row,
+.row2,
+.row3,
+.row4,
+.row5{
+  position: relative;
+  overflow-y: auto;
+  width: 90%;
+  margin: 20px auto;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.slide-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 15px 0;
+  transform: translateX(0);
+  transition: transform 0.2s linear;
+  will-change: transform;
+}
+
+.slide-container:hover {
+  animation-play-state: paused;
+}
+
+/* Character items */
+.slide-item {
+  flex: 0 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.slide-item img {
+  height: 250px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.slide-item img:hover {
+  transform: scale(1.05);
+}
+
+.item-text {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Responsive view */
+@media (max-width: 768px) {
+  .slide-item img {
+    height: 180px;
+  }
+
+  .section1 {
+    width: 95%;
+    padding: 20px 0;
+  }
+
+  .section1 h2 {
+    font-size: 1.4rem;
+  }
+
+}
+/* section */
+.section2 {
+  text-align: center;
+  color: #ffd700;
+  padding: 40px 0;
+  position: relative;
+  border-radius: 15px;
+  width: 85%;
+  margin: 50px auto;
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+}
+.section2 h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  color: #f7e08c;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+/* Responsive view */
+@media (max-width: 768px) {
+  .slide-item img {
+    height: 180px;
+  }
+
+  .section2 {
+    width: 95%;
+    padding: 20px 0;
+  }
+
+  .section2 h2 {
+    font-size: 1.4rem;
+  } 
+}
+/* section 3*/
+.section3 {
+  text-align: center;
+  color: #01521b;
+  padding: 40px 0;
+  position: relative;
+  border-radius: 15px;
+  width: 85%;
+  margin: 50px auto;
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+}
+
+.section3 h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  color: #01521b;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .slide-item img {
+    height: 180px;
+  }
+
+  .section3 {
+    width: 95%;
+    padding: 20px 0;
+  }
+
+  .section3 h2 {
+    font-size: 1.4rem;
+  } 
+}
+/* section 4 */
+.section4,
+.section5{
+  text-align: center;
+  color: #ffae00;
+  padding: 40px 0;
+  position: relative;
+  border-radius: 15px;
+  width: 85%;
+  margin: 50px auto;
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+}
+
+.section4,
+.section5 h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  color: #ff9900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .slide-item img {
+    height: 180px;
+  }
+
+  .section4,
+  .section5 {
+    width: 95%;
+    padding: 20px 0;
+  }
+
+  .section4,
+  .section5 h2 {
+    font-size: 1.4rem;
+  } 
+}
+.section6 {
+  position: relative;
+  min-height: 100vh;
+}
+
+.section6 h2 {
+  font-size: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  padding: 30px;
+  color: white;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.section6 .container-image {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Fixed class to match HTML */
+.section6 .container-image .image-games {
+  height: 250px;
+  width: 350px;
+  border: 10px solid #000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.section6 .container-image .image-games img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: 0.2s linear;
+}
+
+/* FIXED scale value */
+.section6 .container-image .image-games:hover img {
+  transform: scale(1.2);
+}
+
+.section6 .popup-image{
+  position: fixed;
+  top: 0; left: 0;
+  background: rgba(0,0,0,0.9);
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  display: none;
+}
+
+.section6 .popup-image span{
+  position: absolute;
+  top: 0; right: 10px;
+  font-size: 60px;
+  font-weight: bolder;
+  color: #fff;
+  cursor: pointer;
+  z-index: 100;
+}
+.section6 .popup-image img{
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #fff;
+  border-radius: 5px;
+  width: 750px;
+  object-fit: cover;
+}
+
+@media (max-width:768px){
+  .section6 .popup-image img {
+    width: 96%;
+  }
+}

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chepsbook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="social/me.png">
+</head>
+<body>
+    <div id="nav" class="overlay">
+  <div class="overlay-content">
+    <a href="#home" class="HomeNavItem">Home</a>
+    <a href="#anime" class="animeNavItem">Anime Movie</a>
+
+    <div class="dropdown">
+      <button class="dropbtn" id="dropBtn">
+        Character <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="drop-content" id="dropContent">
+        <a href="#Demon">Demon Slayer</a>
+        <a href="#Naruto">Naruto Uzumaki</a>
+        <a href="#mha">My Hero Academia</a>
+        <a href="#chainsaw">Chainsaw Man</a>
+        <a href="#days">Sakamoto Days</a>
+      </div>
+    </div>
+    <a href="#Games">Playing Games</a>
+    <input type="text" placeholder="Search.." id="searchInput">
+  </div>
+</div>
+    <!--Home-->
+    <div class="Hero" id="home">
+      <video src="Demon Slayer - S4E08 (52).mp4" autoplay muted loop id="myVideo">
+        <source src="Demon Slayer - S4E08 (52).mp4" type="video/mp4">
+      </video>
+        <div class="content">
+            <h1>Welcome Chepsbook!</h1>
+             <p>Hi, My name is <span id="Chep"></span></p>
+             <h1>My hobbies</h1>
+        </div>
+    </div>
+    <!--anime Movie-->
+    <div class="bg" id="anime">
+      <div class="bg">
+        <img class="image" src="movie/demon-slayer-3840x2160-22988.jpg" alt="demon">
+        <div class="conteudo">
+          <i class="logo1"></i>
+          <h2 class="name-movie">Demon Slayer: Kimetsu No Yaiba The Movie: Infinity Castle</h2>
+          <p class="description">The Infinity Castle is a pocket dimension consisting of lamplit wooden rooms,
+             long halls, and moving corridors. It possesses a warped direction of gravity, allowing demons to 
+             stand upright, upside down, or perpendicularly on the walls, or move in physically impossible directions.
+              Its unusual structure and layout as Nakime's Blood Demon Art allows any structure within to shift at her 
+              will, though the castle additionally seems to move on its own.
+            </p>
+        </div>
+      </div>
+
+      <div class="bg">
+        <img class="image" src="movie/share.png" alt="mha">
+        <div class="conteudo">
+          <i class="logo1"></i>
+          <h2 class="name-movie">My Hero Academia: You're Next</h2>
+          <p class="description">“Next, it’s your turn!”
+
+              In a society where heroes and villains continuously battle in the name of peace and chaos, Deku, a U.A. High School student who aspires to be the best hero he can be, confronts the villain who imitates the hero he’s long admired. Can Deku and the rest of U.A. High Class 1-A protect the world by putting an end to Dark Might, the man claiming to be the new Symbol of Peace?
+            </p>
+        </div>
+      </div>
+
+      <div class="bg">
+        <img class="image" src="movie/the_last_naruto_the_movie_hd_wallpaper.jpg" alt="Naruto">
+        <div class="conteudo">
+          <i class="logo1"></i>
+          <h2 class="name-movie">The Last: Naruto Uzumaki</h2>
+          <p class="description">
+            The film starts off with the explanation of Kaguya Ōtsutsuki consuming the chakra fruit, the birth of the Ten-Tails, the Sage of the Six Paths stopping the beast and creating the tailed beasts. It then moves over to the fight battles between Asura Ōtsutsuki and Indra Ōtsutsuki, to Madara Uchiha and Hashirama Senju, and the ending conflict between Naruto Uzumaki and Sasuke Uchiha.
+            </p>
+        </div>
+      </div>
+
+      <div class="bg">
+        <img class="image" src="movie/ogp2.jpg" alt="">
+        <div class="conteudo">
+          <i class="logo1"></i>
+          <h2 class="name-movie">Sakamoto Days</h2>
+          <p class="description">
+            Sakamoto Days follows the retired legendary hitman Taro Sakamoto, who now lives a peaceful life running a convenience store with his wife and daughter. When his past catches up to him, and a bounty is placed on his head, he is forced to return to his old life, albeit in a creative, non-lethal way, while also gathering new allies. 
+            </p>
+        </div>
+      </div>
+
+      <div class="bg">
+        <img class="image" src="movie/chainsaw-man-the-3840x2160-23984.jpg" alt="">
+        <div class="conteudo">
+          <i class="logo1"></i>
+          <h2 class="name-movie">Chainsaw Man - The Movie: Reze Arc</h2>
+          <p class="description">
+            For the first time, Chainsaw Man slashes his way onto the big screen in an epic, action-fueled adventure that continues the hugely popular anime series. Denji worked as a Devil Hunter for the Yakuza, trying to pay off the debt he inherited from his parents, until the Yakuza betrayed him and had him killed.
+
+As he was losing consciousness, Denji’s beloved chainsaw-powered devil-dog, Pochita, made a deal with Denji and saved his life. This fused the two together, creating the unstoppable Chainsaw Man. Now, in a brutal war between Devils, hunters, and secret enemies, a mysterious girl named Reze has stepped into his world, and Denji faces his deadliest battle yet, fueled by love in a world where survival knows no rules.
+            </p>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <ul class="buttons">
+  <li>
+    <button class="botao selected">
+      <img src="movie/logo/[CITYPNG.COM]HD Demon Slayer Kimetsu No Yaiba Logo PNG - 1500x1500.png" alt="Demon Slayer">
+    </button>
+  </li>
+
+  <li>
+    <button class="botao">
+      <img src="movie/logo/[CITYPNG.COM]HD My Hero Academia Stickers Logo PNG - 1500x1500.png" alt="MHA">
+    </button>
+  </li>
+
+  <li>
+    <button class="botao">
+      <img src="movie/logo/[CITYPNG.COM]Naruto Shippuden Logo Transparent Background - 2000x2000.png" alt="Naruto Uzumaki">
+    </button>
+  </li>
+
+  <li>
+    <button class="botao">
+      <img src="movie/logo/Sakamoto_Days_manga_logo.svg.png" alt="Sakamoto Days">
+    </button>
+  </li>
+
+  <!-- 5th button (disabled preview only) -->
+  <li>
+    <button class="botao" >
+      <img src="movie/logo/Chainsaw_Man_logo.png" alt="Chainsaw Man">
+    </button>
+  </li>
+</ul>
+    <!---Character Main-->
+    <!-- Demon Slayer Section -->
+<section id="Demon" class="section1">
+  <h1>My Favorite Character</h1>
+  <h2>Demon Slayer Characters</h2>
+  <div class="row">
+    <div class="slide-container">
+      <div class="slide-item">
+        <img src="Character/demon/Tanjiro_anime_right_face.webp" alt="Tanjiro Kamado">
+        <div class="item-text">Tanjiro Kamado</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/demon/Nezuko_anime_design.webp" alt="Nezuko Kamado">
+        <div class="item-text">Nezuko Kamado</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/demon/Zenitsu_anime_right_face.webp" alt="Zenitsu Agatsuma">
+        <div class="item-text">Zenitsu Agatsuma</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/demon/Inosuke_anime_right_face.webp" alt="Inosuke Hashibira">
+        <div class="item-text">Inosuke Hashibira</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/demon/Tengen_anime_right_face.webp" alt="">
+        <div class="item-text">Tengen Uzui</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/demon/Giyu_anime_right_face.webp" alt="">
+        <div class="item-text">Giyu Tomioka</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/demon/Gyomei_anime_right_face.webp" alt="">
+        <div class="item-text">Gyomei Himejima</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/demon/Genya_Shinazugawa_Full_Body_29.webp" alt="">
+        <div class="item-text">Genya Shinazugawa</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/demon/Kyojuro_anime_right_face.webp" alt="">
+        <div class="item-text">Kyojuro Rengoku</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/demon/Kanao_anime_right_face.webp" alt="">
+        <div class="item-text">Kanao Tsuyuri</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/demon/Mitsuri_anime_right_face.webp" alt="">
+        <div class="item-text">Mitsuri Kanroji</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/demon/Muichiro_anime_right_face.webp" alt="">
+        <div class="item-text">Muichiro Tokito</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/demon/Sanemi_anime_right_face.webp" alt="">
+        <div class="item-text">Sanemi Shinazugawa</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/demon/Obanai_anime_right_face.webp" alt="">
+        <div class="item-text">Obanai Iguro</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/demon/Muzan_Anime_2_29.webp" alt="">
+        <div class="item-text">Muzan Kibutsuji</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/demon/Kokushibo_back_facing.webp" alt="">
+        <div class="item-text">Kokushibo</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/demon/Doma_29.webp" alt="">
+        <div class="item-text">Doma</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/demon/Akaza_design.webp" alt="">
+        <div class="item-text">Akaza</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/demon/Demon_Kaigaku_(Anime).png" alt="">
+        <div class="item-text">Kaigaku</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Naruto Section -->
+<section id="Naruto" class="section2">
+  <h2>Naruto Characters</h2>
+  <div class="row2">
+    <div class="slide-container">
+      <div class="slide-item">
+        <img src="Character/naruto/Naruto_-_The_Last.webp" alt="Naruto Uzumaki">
+        <div class="item-text">Naruto Uzumaki</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/naruto/Sasuke_-_The_Last.webp" alt="Sasuke Uchiha">
+        <div class="item-text">Sasuke Uchiha</div>
+      </div>
+       <div class="slide-item">
+        <img src="Character/naruto/Kawashiki_Storm.webp" alt="Kawaki">
+        <div class="item-text">Kawaki</div>
+      </div>
+       <div class="slide-item">
+        <img src="Character/naruto/Borushiki_Storm.webp" alt="Boruto Uzumaki">
+        <div class="item-text">Boruto Uzumaki</div>
+      </div>
+       <div class="slide-item">
+        <img src="Character/naruto/Sarada.webp" alt="Sarada Uchiha">
+        <div class="item-text">Sarada Uchiha</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/naruto/Sakura_-_The_Last.webp" alt="Sakura Haruno">
+        <div class="item-text">Sakura Haruno</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/naruto/Kakashi_-_The_Last.webp" alt="Kakashi Hatake">
+        <div class="item-text">Kakashi Hatake</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/naruto/Hinata_-_The_Last.webp">
+        <div class="item-text">Hinata Hyūga</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/naruto/Itachi_Akatsuki_Mobile.webp">
+        <div class="item-text">Itachi Uchiha</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/naruto/Obito_Uchiha_-_Akatsuki.webp">
+        <div class="item-text">Obito Uchiha</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/naruto/Gaara_full_body.webp" alt="Gaara">
+        <div class="item-text">Gaara</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/naruto/Kurama_Render.webp" alt="Kurama">
+        <div class="item-text">Kurama</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Mha Section -->
+<section id="mha" class="section3">
+  <h2>My Hero Academia Fictional Character</h2>
+  <div class="row3">
+    <div class="slide-container">
+      <div class="slide-item">
+        <img src="Character/mha/Izuku_Midoriya_Costume_Epsilon_V2_29.webp">
+        <div class="item-text">Izuku Midoriya</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Katsuki_Bakugo_Winter_Costume_2_29.webp">
+        <div class="item-text">Katsuki Bakugo</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Shoto_Todoroki_Action_5.webp">
+        <div class="item-text">Shoto Todoroki</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/All_Might_True_Form_S7_Visual.webp" alt="Kakashi Hatake">
+        <div class="item-text">Toshinori Yagi</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Young_All_For_One_Profile.webp">
+        <div class="item-text">All for One</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Post-War_Tomura_Shigaraki.webp" alt="">
+        <div class="item-text">Tomura Shigaraki</div>
+      </div>
+       <div class="slide-item">
+        <img src="Character/mha/Yoichi_Shigaraki_29.webp" alt="">
+        <div class="item-text">Yoichi Shigaraki</div>
+      </div>
+       <div class="slide-item">
+        <img src="Character/mha/Kudo_29.webp" alt="">
+        <div class="item-text">Toshitsugu Kudo</div>
+      </div>
+       <div class="slide-item">
+        <img src="Character/mha/Daigoro_Banjo_29.webp" alt="">
+        <div class="item-text">Daigoro Banjo</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Momo_Yaoyorozu_Winter_Costume_29.webp" alt="">
+        <div class="item-text">Momo Yaoyorozu</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Yuga_Final_War_Outfit.webp" alt="">
+        <div class="item-text">Yuga Aoyama</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Mina_Ashido_Action_2.webp" alt="">
+        <div class="item-text">Mina Ashido</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Tsuyu_Asui_Winter_Costume_29.webp" alt="">
+        <div class="item-text">Tsuyu Asui</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Tenya_Ida_Action_5.webp" alt="">
+        <div class="item-text">Tenya Ida</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Ochaco_Uraraka_Action_5.webp" alt="">
+        <div class="item-text">Ochaco Uraraka</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Mashirao_Ojiro_Hero_Costume_3_Action.webp" alt="">
+        <div class="item-text">Mashirao Ojiro</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Denki_Kaminari_Action_5.webp" alt="">
+        <div class="item-text">Denki Kaminari</div>
+      </div><div class="slide-item">
+        <img src="Character/mha/Eijiro_Kirishima_Action_5.webp" alt="">
+        <div class="item-text">Eijiro Kirishima</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Koji_Koda_Action_3.webp" alt="">
+        <div class="item-text">Koji Koda</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Rikido_Sato_Action_3.webp" alt="">
+        <div class="item-text">Rikido Sato</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Mezo_Shoji_Action_3.webp" alt="">
+        <div class="item-text">Mezo Shoji</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Kyoka_Jiro_Action_4.webp" alt="">
+        <div class="item-text">Kyoka Jiro</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Hanta_Sero_Action_3.webp" alt="">
+        <div class="item-text">Hanta Sero</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Post-War_Shota_Aizawa_Hero_Costume_29.webp" alt="">
+        <div class="item-text">Aizawa</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Nana_Shimura_29.webp" alt="">
+        <div class="item-text">Nana Shimura</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Kaina_Tsutsumi_Villain_Costume_29.webp" alt="">
+        <div class="item-text">Kaina Tsutsumi</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Fumikage_Tokoyami_Action_4.webp" alt="">
+        <div class="item-text">Fumikage Tokoyam</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Toru_Hagakure_Action_2.webp" alt="">
+        <div class="item-text">Toru Hagakure</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/mha/Minoru_Mineta_Action_3.webp" alt="">
+        <div class="item-text">Minoru Mineta</div>
+      </div>
+  </div>
+</section>
+<!---Chainsaw man character-->
+<section id="chainsaw" class="section4">
+  <h2>Chainsaw Man</h2>
+  <div class="row4">
+    <div class="slide-container">
+      <div class="slide-item">
+        <img src="Character/chainsaw man/Denji_Chainsaw_Man_Reze_Arc_anime_design.webp" >
+        <div class="item-text">Denji</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/chainsaw man/Pochita_anime_design.webp">
+        <div class="item-text">Pochita</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/chainsaw man/Makima_Reze_Arc_anime_design.webp">
+        <div class="item-text">Makima</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/chainsaw man/Power_anime_design_2.webp">
+        <div class="item-text">Power</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/chainsaw man/Aki_Reze_Arc_anime_design.webp">
+        <div class="item-text">Aki Hayakawa</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/chainsaw man/Reze_Reze_Arc_anime_design.webp" alt="">
+        <div class="item-text">Reze</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="days" class="section5">
+  <h2>Sakamoto Days</h2>
+  <div class="row5">
+    <div class="slide-container">
+      <div class="slide-item">
+        <img src="Character/Sakamoto Days/Taro_Sakamoto_anime_design.webp" >
+        <div class="item-text">Taro Sakamoto</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/Sakamoto Days/Aoi_and_Hana_Sakamoto_anime_design.webp" >
+        <div class="item-text">Aoi and Hana Sakamoto</div>
+      </div>  
+      <div class="slide-item">
+        <img src="Character/Sakamoto Days/Shin_Asakura_anime_design.webp">
+        <div class="item-text">Shin Asakura</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/Sakamoto Days/Lu_Shaotang_anime_design.webp">
+        <div class="item-text">Lu Shaotang</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/Sakamoto Days/Heisuke_Mashimo_anime_design.webp">
+        <div class="item-text">Heisuke Mashimo</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/Sakamoto Days/Yoichi_Nagumo_anime_design.webp">
+        <div class="item-text">Yoichi Nagumo</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/Sakamoto Days/Gaku_anime_design.webp" >
+        <div class="item-text">Gaku</div>
+      </div>
+       <div class="slide-item">
+        <img src="Character/Sakamoto Days/Uzuki_29.webp" >
+        <div class="item-text">Kei Uzuki</div>
+      </div>
+       <div class="slide-item">
+        <img src="Character/Sakamoto Days/Rion_Akao_anime_design.webp" >
+        <div class="item-text">Rion Akao</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/Sakamoto Days/Takamura_anime_design.webp" >
+        <div class="item-text">Takamura</div>
+      </div> 
+      <div class="slide-item">
+        <img src="Character/Sakamoto Days/Akira_Akao_anime_design.webp" >
+        <div class="item-text">Akira Akao</div>
+      </div>
+      <div class="slide-item">
+        <img src="Character/Sakamoto Days/Hyo_anime_design.webp" >
+        <div class="item-text">Hyo</div>
+      </div>  
+      <div class="slide-item">
+        <img src="Character/Sakamoto Days/Osaragi_anime_design.webp" >
+        <div class="item-text">Osaragi</div>
+      </div> 
+      </div>
+    </div>
+  </div>
+</section>
+<section id="Games" class="section6">
+  <h2>Playing Games</h2>
+  <div class="container-image">
+    <div class="image-games"><img src="games/ml.jpg" alt="Mobile Legend">
+    </div>
+    <div class="image-games"><img src="games/valora.jpg" alt="Valorant"></div>
+    <div class="image-games"><img src="games/fornite.jpg" alt="Fornite"></div>
+    <div class="image-games"><img src="games/comd.jpg" alt="Call of Duty Mobile"></div>
+    <div class="image-games"><img src="games/mine.jpg" alt="Minecraft"></div>
+    <div class="image-games"><img src="games/9664fbf4315f35b5a922411938a15a3d.jpg" alt="Monster Hunter"></div>
+    <div class="image-games"><img src="games/rivals.jpg" alt="Marvel Rivals"></div>
+    <div class="image-games"><img src="games/roblox.jpg" alt="Roblox"></div>
+    <div class="image-games"><img src="games/pokemon.jpg" alt="Pokemon"></div>
+    <div class="image-games"><img src="games/god.jpg" alt="God of War"></div>
+  </div>
+  <div class="popup-image">
+    <span>&times;</span>
+    <img src="games/ml.jpg">
+  </div>
+</section>
+<script src="script.js">
+</script>
+</body>
+</html>
